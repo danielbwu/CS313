@@ -14,18 +14,9 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<!--Navbar-->
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Daniel Wu</a>
-			</div>
-			<ul class="nav navbar-nav">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Assignments</a></li>
-			</ul>
-		</div>
-	</nav>
+	<?php
+		require("nav.php");
+	?>
 
 	<!--Main content-->
 	<div class="col-sm-2">
@@ -34,7 +25,7 @@
 	<div class="jumbotron text-center">
 		<h1>Hello</h1>
 		<p>Hello there</p>
-		<img src="images/headshot.jpg" class="img-rounded img-responsive" alt="daniel wu" width="300px" />
+		<img src="images/headshot.jpg" class="img-rounded img-responsive" alt="daniel wu" width="250px" />
 	</div>
 	<div class="container-fluid text-center">
 		<p>Here's some text</p>
