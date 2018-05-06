@@ -34,7 +34,7 @@
 	<div class="jumbotron text-center">
 		<h1>Hello</h1>
 		<p>Hello there</p>
-		<img src="images/headshot.jpg" class="img-rounded img-responsive" alt="daniel wu" />
+		<img src="images/headshot.jpg" class="img-rounded img-responsive" alt="daniel wu" width="300px" />
 	</div>
 	<div class="container-fluid text-center">
 		<p>Here's some text</p>
