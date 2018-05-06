@@ -19,16 +19,31 @@
 	?>
 
 	<!--Main content-->
-	<div class="col-sm-2">
+	<div class="container">
 
-	</div>
-	<div class="jumbotron text-center">
-		<h1>Hello</h1>
-		<p>Hello there</p>
-		<img src="images/headshot.jpg" class="img-rounded img-responsive" alt="daniel wu" width="250px" />
-	</div>
-	<div class="container-fluid text-center">
-		<p>Here's some text</p>
+		<div class="col-sm-2"></div>
+
+		<div class="container-fluid col-sm-8">
+			<div class="jumbotron text-center row container-fluid bio">
+				<div class="col-sm-6">
+					<img src="images/headshot.jpg" class="img-rounded img-responsive" alt="daniel wu" />
+				</div>
+				<div class="col-sm text-left">
+					<h2>Daniel Wu</h2>
+					<p>
+						<b>Major:</b><br />
+						Software Engineering
+					</p>
+				</div>
+			</div>
+
+			<div class="container text-center">
+				<p>Here's some text</p>
+			</div>
+		</div>
+
+		<div class="col-sm-2"></div>
+
 	</div>
 </body>
 </html>
