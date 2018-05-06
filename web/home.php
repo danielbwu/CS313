@@ -17,7 +17,7 @@
 	<?php
 		require("nav.php");
 	?>
-
+	<div class="bg"></div>
 	<!--Main content-->
 	<div class="container">
 
