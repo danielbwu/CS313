@@ -4,6 +4,7 @@
 
     /* Half height */
     height: 50%; 
+	 width: 100%;
 
     /* Center and scale the image nicely */
     background-position: center;
@@ -11,6 +12,6 @@
     background-size: cover;
 }
 
-.bio {
-
+#bio {
+	background-color: #337ab7;
 }
