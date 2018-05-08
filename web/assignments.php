@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Hello World</title>
-	<link rel="stylesheet" type="text/css" href="hello.css" />
+	<link rel="stylesheet" type="text/css" href="css/home.css" />
 </head>
 <body>
 	<?php
