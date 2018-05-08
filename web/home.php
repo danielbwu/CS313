@@ -18,7 +18,7 @@
 	<?php
 		require("nav.php");
 	?>
-	<div class="bg"></div>
+	<div class="bg col-sm-12"></div>
 	<!--Main content-->
 	<div class="container">
 
@@ -58,6 +58,8 @@
 					<li class="list-group-item active"><b>Hobbies:</b></li>
 					<li class="list-group-item">Programming</li>
 					<li class="list-group-item">Computer Building</li>
+					<li class="list-group-item">D&D</li>
+					<li class="list-group-item">Video Games</li>
 				</ul>
 			</div>
 

@@ -13,5 +13,9 @@
 }
 
 #bio {
-	background-color: #337ab7;
+	/*background-color: #337ab7;*/
+}
+
+#headshot {
+	margin-top: 10px;
 }
