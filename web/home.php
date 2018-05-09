@@ -18,7 +18,6 @@
 	<?php
 		require("nav.php");
 	?>
-	<div class="bg col-sm-12"></div>
 	<!--Main content-->
 	<div class="container">
 

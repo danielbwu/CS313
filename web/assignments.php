@@ -18,5 +18,16 @@
 	<?php
 		require("nav.php");
 	?>
+	<div class="container">
+		<div class="container-fluid text-left col-sm-6" id="assignments">
+				<ul class="list-group">
+					<li class="list-group-item active"><b>Assignments</b></li>
+					<a href="hello.html"><li class="list-group-item">Hello World</li></a>
+					<li class="list-group-item">coming soon...</li>
+					<li class="list-group-item">coming soon...</li>
+					<li class="list-group-item">coming soon...</li>
+				</ul>
+			</div>
+	</div>
 </body>
 </html>
