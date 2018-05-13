@@ -2,7 +2,7 @@
 
     session_start();
 
-    if(!isset($_SESSION["cart"])) {
+    if(!isset($_SESSION["items"])) {
         init_cart();
     }
 
@@ -10,7 +10,7 @@
 
     }
 
-    function init_cart() {
+    function init_products() {
         $p1;
         $p1->id = 1;
         $p1->name = "#2 Pencils (5-pack)";
@@ -32,8 +32,8 @@
         $p3->price = 4.99;
         $p3->qty = 0;
 
-        $cart = array($p1->id=>$p1, $p2->id=>$p2, $p2->id=>$p2);
-        $_SESSION["cart"] = $cart;
+        $items = array($p1->id=>$p1, $p2->id=>$p2, $p2->id=>$p2);
+        $_SESSION["items"] = $items;
         
     }
 
@@ -53,7 +53,13 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript">
+        function addToCart(id) {
+            console.log("Adding item " + id.toString() + " to cart");
+        }
+    </script>
 </head>
 <body>
     <?php
@@ -68,6 +74,7 @@
                         <th>Product</th>
                         <th class="col-md-1">Price</th>
                         <th class="col-md-1">Quantity</th>
+                        <th class="col-md-2"></th>
                     </thead>
                     <tbody>
                         <tr>
@@ -77,12 +84,12 @@
                             <td><button type="button">Add to Cart</button></td>
                         </tr>
                         <?php
-                            foreach($_SESSION["cart"] as $p => $p_value) {
+                            foreach($_SESSION["items"] as $p => $p_value) {
                                 echo "<tr>" . 
                                 "<td>" . $p_value->name . "</td>" . 
                                 "<td>$" . $p_value->price . "</td>" . 
                                 "<td>" . "<input type=\"number\" name=\"quantity\" size=\"2\" min=\"0\" max=\"99\" value=\"" . $p_value->qty . "\">" . "</td>" . 
-                                "<td>" . "Button here" . "<td>" . 
+                                "<td>" . "<button type=\"button\" class=\"btn btn-success\" onclick=\"addToCart(" . $p . ")\"" . "<td>" . 
                                 "</tr>";
                             }
                         ?>
@@ -92,5 +99,6 @@
             </div>
         </form>
     </div>
+
 </body>
 </html>
