@@ -34,7 +34,7 @@
 
         $cart = array($p1->id=>$p1, $p2->id=>$p2, $p2->id=>$p2);
         $_SESSION["cart"] = $cart;
-        echo $cart;
+        
     }
 
 ?>
@@ -61,13 +61,13 @@
 	?>
     <!--Main Content-->
     <div class="container">
-        <div id="myForm">
+        <form id="myForm" action="cart.php" method="post">
             <div class="container-fluid col-md-12">
                 <table class="table">
                     <thead>
                         <th>Product</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
+                        <th class="col-md-1">Price</th>
+                        <th class="col-md-1">Quantity</th>
                     </thead>
                     <tbody>
                         <tr>
@@ -80,7 +80,7 @@
                             foreach($_SESSION["cart"] as $p => $p_value) {
                                 echo "<tr>" . 
                                 "<td>" . $p_value->name . "</td>" . 
-                                "<td>" . $p_value->price . "</td>" . 
+                                "<td>$" . $p_value->price . "</td>" . 
                                 "<td>" . "<input type=\"number\" name=\"quantity\" size=\"2\" min=\"0\" max=\"99\" value=\"" . $p_value->qty . "\">" . "</td>" . 
                                 "<td>" . "Button here" . "<td>" . 
                                 "</tr>";
@@ -88,8 +88,9 @@
                         ?>
                     </tbody>
                 </table>
+                <input type="submit" value="View Cart" />
             </div>
-        </div>
+        </form>
     </div>
 </body>
 </html>
