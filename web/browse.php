@@ -56,8 +56,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
     <script type="text/javascript">
-        function addToCart(id) {
-            console.log("Adding item " + id.toString() + " to cart");
+        function addToCart() {
+            console.log("Adding item to cart");
         }
     </script>
 </head>
