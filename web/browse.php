@@ -76,7 +76,7 @@
                             <td><button type="button">Add to Cart</button></td>
                         </tr>
                         <?php
-                            foreach($_SESSION[$cart] as $p => $p_value) {
+                            foreach($cart as $p => $p_value) {
                                 echo "<tr>" . 
                                 "<td>" . $p_value->name . "</td>" . 
                                 "<td>" . $p_value->price . "</td>" . 
