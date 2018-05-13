@@ -16,23 +16,37 @@
         $p1->name = "#2 Pencils (5-pack)";
         $p1->desc = "School-approved #2 pencils";
         $p1->price = 1.99;
-        $p1->qty = 0;
+        $p1->qty = 1;
 
         $p2;
         $p2->id = 2;
         $p2->name = "Erasers (2-pack)";
         $p2->desc = "A set of standard pink erasers";
         $p2->price = 0.99;
-        $p2->qty = 0;
+        $p2->qty = 1;
 
         $p3;
         $p3->id = 3;
         $p3->name = "Gel Pens (5-pack)";
         $p3->desc = "Ink pens of various colors";
         $p3->price = 4.99;
-        $p3->qty = 0;
+        $p3->qty = 1;
 
-        $items = array($p1->id=>$p1, $p2->id=>$p2, $p2->id=>$p2);
+        $p4;
+        $p4->id = 4;
+        $p4->name = "Backpack";
+        $p4->desc = "Just a regular backpack";
+        $p4->price = 24.99;
+        $p4->qty = 1;
+
+        $p5;
+        $p5->id = 5;
+        $p5->name = "Ruler";
+        $p5->desc = "A standard 12-inch ruler";
+        $p5->price = 3.99;
+        $p5->qty = 1;
+
+        $items = array($p1->id=>$p1, $p2->id=>$p2, $p3->id=>$p3, $p4->id=>$p4);
         $_SESSION["items"] = $items;
         
     }
@@ -88,14 +102,14 @@
                                 echo "<tr>" . 
                                 "<td>" . $p_value->name . "</td>" . 
                                 "<td>$" . $p_value->price . "</td>" . 
-                                "<td>" . "<input type=\"number\" name=\"quantity\" size=\"2\" min=\"0\" max=\"99\" value=\"" . $p_value->qty . "\">" . "</td>" . 
+                                "<td>" . "<input type=\"number\" id=\"" . $p . "-qty\" size=\"2\" min=\"0\" max=\"99\" value=\"" . $p_value->qty . "\">" . "</td>" . 
                                 "<td>" . "<button type=\"button\" class=\"btn btn-success\" onclick=\"addToCart(" . $p . ")\">Add to Cart</button>" . "<td>" . 
                                 "</tr>";
                             }
                         ?>
                     </tbody>
                 </table>
-                <input type="submit" value="View Cart" />
+                <input type="submit" class="btn btn-success" value="View Cart" />
             </div>
         </form>
     </div>
