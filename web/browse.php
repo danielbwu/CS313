@@ -34,6 +34,7 @@
 
         $cart = array($p1->id=>$p1, $p2->id=>$p2, $p2->id=>$p2);
         $_SESSION["cart"] = $cart;
+        echo $cart;
     }
 
 ?>
@@ -76,7 +77,7 @@
                             <td><button type="button">Add to Cart</button></td>
                         </tr>
                         <?php
-                            foreach($cart as $p => $p_value) {
+                            foreach($_SESSION["cart"] as $p => $p_value) {
                                 echo "<tr>" . 
                                 "<td>" . $p_value->name . "</td>" . 
                                 "<td>" . $p_value->price . "</td>" . 
