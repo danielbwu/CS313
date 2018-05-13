@@ -89,7 +89,7 @@
                                 "<td>" . $p_value->name . "</td>" . 
                                 "<td>$" . $p_value->price . "</td>" . 
                                 "<td>" . "<input type=\"number\" name=\"quantity\" size=\"2\" min=\"0\" max=\"99\" value=\"" . $p_value->qty . "\">" . "</td>" . 
-                                "<td>" . "<button type=\"button\" class=\"btn btn-success\" onclick=\"addToCart(" . $p . ")\"" . "<td>" . 
+                                "<td>" . "<button type=\"button\" class=\"btn btn-success\" onclick=\"addToCart(" . $p . ")\">Add to Cart</button>" . "<td>" . 
                                 "</tr>";
                             }
                         ?>
