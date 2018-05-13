@@ -3,14 +3,14 @@
     session_start();
 
     if(!isset($_SESSION["items"])) {
-        init_products();
+        init_items();
     }
 
     function addToCart($item) {
 
     }
 
-    function init_products() {
+    function init_items() {
         $p1;
         $p1->id = 1;
         $p1->name = "#2 Pencils (5-pack)";
@@ -56,8 +56,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
     <script type="text/javascript">
-        function addToCart() {
-            console.log("Adding item to cart");
+        function addToCart(id) {
+            console.log("Adding item " + id.toString() + " to cart");
         }
     </script>
 </head>
@@ -89,7 +89,7 @@
                                 "<td>" . $p_value->name . "</td>" . 
                                 "<td>$" . $p_value->price . "</td>" . 
                                 "<td>" . "<input type=\"number\" name=\"quantity\" size=\"2\" min=\"0\" max=\"99\" value=\"" . $p_value->qty . "\">" . "</td>" . 
-                                "<td>" . "<button type=\"button\" class=\"btn btn-success\" onclick=\"addToCart()\">Add to Cart</button>" . "<td>" . 
+                                "<td>" . "<button type=\"button\" class=\"btn btn-success\" onclick=\"addToCart(" . $p . ")\">Add to Cart</button>" . "<td>" . 
                                 "</tr>";
                             }
                         ?>
