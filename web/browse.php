@@ -26,10 +26,10 @@
     <!--Main Content-->
     <div class="container">
         <div id="myForm">
-            <div class="container-fluid col-md-4">
+            <div class="container-fluid col-md-12">
                 <table class="table">
                     <thead>
-                        <th>Product Name</th>
+                        <th>Product</th>
                         <th>Price</th>
                         <th>Quantity</th>
                     </thead>
@@ -37,7 +37,7 @@
                         <tr>
                             <td>Product 1</td>
                             <td>$5.00</td>
-                            <td><input type="number" /></td>
+                            <td><input type="number" size="2" min="0" max="99"/></td>
                             <td><button type="button">Add to Cart</button></td>
                         </tr>
                     </tbody>
