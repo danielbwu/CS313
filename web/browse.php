@@ -24,13 +24,23 @@
     <!--Main Content-->
     <div class="container">
         <div id="myForm">
-            <table class="table">
-                <thead>
-                    <th>Product Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                </thead>
-            </table>
+            <div class="col-md-4">
+                <table class="table">
+                    <thead>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Product 1</td>
+                            <td>$5.00</td>
+                            <td><input type="number" /></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </body>
