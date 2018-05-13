@@ -20,11 +20,13 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    
+    <?php
+		require("nav.php");
+	?>
     <!--Main Content-->
     <div class="container">
         <div id="myForm">
-            <div class="col-md-4">
+            <div class="container-fluid col-md-4">
                 <table class="table">
                     <thead>
                         <th>Product Name</th>
@@ -36,7 +38,7 @@
                             <td>Product 1</td>
                             <td>$5.00</td>
                             <td><input type="number" /></td>
-                            <td></td>
+                            <td><button type="button">Add to Cart</button></td>
                         </tr>
                     </tbody>
                 </table>
