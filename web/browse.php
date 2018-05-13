@@ -2,7 +2,7 @@
 
     session_start();
 
-    if(!isset($_SESSION[$cart])) {
+    if(!isset($_SESSION["cart"])) {
         init_cart();
     }
 
@@ -33,7 +33,7 @@
         $p3->qty = 0;
 
         $cart = array($p1->id=>$p1, $p2->id=>$p2, $p2->id=>$p2);
-        $_SESSION[$cart] = $cart;
+        $_SESSION["cart"] = $cart;
     }
 
 ?>
