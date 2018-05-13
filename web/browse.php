@@ -3,7 +3,7 @@
     session_start();
 
     if(!isset($_SESSION["items"])) {
-        init_cart();
+        init_products();
     }
 
     function addToCart($item) {
