@@ -6,7 +6,7 @@
 
         //Get product id
         if (empty($_POST["id"])) {
-
+            echo "ID not found";
         }
         else {
             $id = test_input($_POST["id"]);
@@ -14,7 +14,7 @@
 
         //Get quantity
         if (empty($_POST["qty"])) {
-
+            echo "Quantity not found";
         }
         else {
             $qty = test_input($_POST["qty"]);
