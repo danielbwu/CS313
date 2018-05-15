@@ -23,7 +23,7 @@
 				<ul class="list-group">
 					<li class="list-group-item active"><b>Assignments</b></li>
 					<a href="hello.html"><li class="list-group-item">Hello World</li></a>
-					<li class="list-group-item">coming soon...</li>
+					<a href="browse.php"><li class="list-group-item">Shopping Cart</li></a>
 					<li class="list-group-item">coming soon...</li>
 					<li class="list-group-item">coming soon...</li>
 				</ul>
