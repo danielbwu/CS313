@@ -83,7 +83,7 @@
                             console.log(this.responseText);
                         }
                         else {
-                            //console.error("Request Failed");
+                            console.log("Request Failed");
                         }
                     };
                     request.open("POST", "add_to_cart.php", true);
