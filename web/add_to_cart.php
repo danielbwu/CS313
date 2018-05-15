@@ -51,5 +51,6 @@
             $_SESSION["cart"][$id] = $_SESSION["items"][$id];
             $_SESSION["cart"][$id]->qty = $qty;
         }
+        echo "Success";
     }
 ?>
