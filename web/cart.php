@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $id = "";
 
     //Get data from request
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -10,7 +11,7 @@
             $success = false;
         }
         else {
-            $id = test_input($_POST["id"]);
+            $id = test_input($_POST["itemID"]);
             $success = true;
         }
         
@@ -74,6 +75,7 @@
     <!--Main Content-->
     <div class="container">
         <div class="container-fluid col-md-12">
+            <a href="browse.php"><button class="btn btn-primary">Return to Browse</button></a>
             <h1>Your Cart</h1>
             <table class="table table-responsive">
                 <thead>
