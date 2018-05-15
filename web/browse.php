@@ -88,7 +88,7 @@
                     };
                     request.open("POST", "add_to_cart.php", true);
                     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                    request.send("id=" + id.toString() + "&qty=" + qty.toString());
+                    request.send("id=" + id + "&qty=" + qty);
                 }
             }
 
