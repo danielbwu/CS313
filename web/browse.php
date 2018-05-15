@@ -46,7 +46,7 @@
         $p5->price = 3.99;
         $p5->qty = 1;
 
-        $items = array($p1->id=>$p1, $p2->id=>$p2, $p3->id=>$p3, $p4->id=>$p4);
+        $items = array($p1->id=>$p1, $p2->id=>$p2, $p3->id=>$p3, $p4->id=>$p4, $p5->id=>$p5);
         $_SESSION["items"] = $items;
         
     }
