@@ -29,9 +29,9 @@
         unset($_SESSION["cart"][$id]);
     }
 
-    $total = 0;
+    $_SESSION["total"] = 0;
     foreach($_SESSION["cart"] as $p => $p_value) {
-        $total += $p_value->price * $p_value->qty;
+        $_SESSION["total"] += $p_value->price * $p_value->qty;
     }
 
 ?>
@@ -84,7 +84,7 @@
                                 "</tr>\n";
                         }
                         echo "<th>Total:</th>\n" . 
-                            "<th class=\"col-md-1\">$" . $total . "</th>\n";
+                            "<th class=\"col-md-1\">$" . $_SESSION["total"] . "</th>\n";
                     }
                     else {
                         echo "<h2>Your Cart is Empty</h2>\n";

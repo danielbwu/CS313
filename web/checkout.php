@@ -23,6 +23,8 @@
     <!--Main Content-->
     <div class="container">
         <div class="container-fluid col-md-6">
+            <h1>Checkout</h1>
+            <h2>Order Total: <?php echo $_SESSION["total"]?></h2>
             <form method="post" action="confirmation.php">
                 <div class="form-group">
                     <label for="streetAddress">Street address</label>
@@ -38,7 +40,7 @@
                 </div>
                 <div class="form-group">
                     <label for="zip">Zip code</label>
-                    <input type="number" size="8" class="form-control" name="zip" placeholder="Enter zip code" />
+                    <input type="number" maxlength="8" class="form-control" name="zip" placeholder="Enter zip code" />
                 </div>
                 <input type="submit" class="btn btn-primary" value="Place Order" />
             </form>

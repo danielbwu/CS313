@@ -6,10 +6,6 @@
         init_items();
     }
 
-    function addToCart($item) {
-
-    }
-
     function init_items() {
         $p1;
         $p1->id = 1;
