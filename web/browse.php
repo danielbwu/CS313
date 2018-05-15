@@ -60,7 +60,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Browse Products</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 	<!-- jQuery library -->
@@ -72,6 +71,8 @@
     <script type="text/javascript">
         function addToCart(id) {
             console.log("Adding item " + id.toString() + " to cart");
+            let qty = parseInt(document.getElementById(id).value);
+            console.log("Quantity: " + qty.toString());
         }
     </script>
 </head>
@@ -91,12 +92,6 @@
                         <th class="col-md-2"></th>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Product 1</td>
-                            <td>$5.00</td>
-                            <td><input type="number" size="2" min="0" max="99"></td>
-                            <td><button type="button">Add to Cart</button></td>
-                        </tr>
                         <?php
                             foreach($_SESSION["items"] as $p => $p_value) {
                                 echo "<tr>" . 
