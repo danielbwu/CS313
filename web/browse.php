@@ -71,8 +71,27 @@
     <script type="text/javascript">
         function addToCart(id) {
             console.log("Adding item " + id.toString() + " to cart");
-            let qty = parseInt(document.getElementById(id.toString() + "-qty").value);
-            console.log("Quantity: " + qty.toString());
+            if (id != null) {
+                let qty = parseInt(document.getElementById(id.toString() + "-qty").value);
+                console.log("Quantity: " + qty.toString());
+
+                if (qty != null && qty != 0) {
+                    //Send ajax request
+                    var request = new XMLHttpRequest();
+                    request.onreadystatechange = function() {
+                        if (this.resdyState == 4 && this.status == 200) {
+                            console.log(this.responseText);
+                        }
+                        else {
+                            console.error("Request Failed");
+                        }
+                    };
+                    request.open("POST", "add_to_cart.php", true);
+                    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    request.send("id=" + id.toString() + "&qty=" + qty.toString());
+                }
+            }
+
         }
     </script>
 </head>
