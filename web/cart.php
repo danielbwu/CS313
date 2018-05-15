@@ -86,7 +86,7 @@
                     <?php
                     if (count($_SESSION["cart"]) > 0) {
                         foreach($_SESSION["cart"] as $p => $p_value) {
-                            echo "<form method=\"post\" action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . ">" .
+                            echo "<form method=\"post\" action=\"cart.php\">" .
                                 "<tr name=\"itemID\" value=\"" . $p . "\">" . 
                                     "<td>" . $p_value->name . "</td>\n" . 
                                     "<td>$" . $p_value->price . "</td>\n" . 
