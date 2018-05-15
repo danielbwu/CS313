@@ -72,7 +72,7 @@
         function addToCart(id) {
             console.log("Adding item " + id.toString() + " to cart");
             if (id != null) {
-                let qty = parseInt(document.getElementById(id.toString() + "-qty").value);
+                var qty = parseInt(document.getElementById(id.toString() + "-qty").value);
                 console.log("Quantity: " + qty.toString());
 
                 if (qty != null && qty != 0) {
@@ -83,7 +83,7 @@
                             console.log(this.responseText);
                         }
                         else {
-                            console.error("Request Failed");
+                            //console.error("Request Failed");
                         }
                     };
                     request.open("POST", "add_to_cart.php", true);
