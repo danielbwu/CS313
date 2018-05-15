@@ -44,13 +44,10 @@
         }
 
         //Check if item is already in cart
-        if (array_key_exists($id, $_SESSION["cart"])) {
-            $_SESSION["cart"][$id]->qty += $qty;
-        }
-        else {
+        if (!array_key_exists($id, $_SESSION["cart"])) {
             $_SESSION["cart"][$id] = $_SESSION["items"][$id];
-            $_SESSION["cart"][$id]->qty = $qty;
         }
+        $_SESSION["cart"][$id]->qty = $qty;
         echo "Success";
     }
 ?>
