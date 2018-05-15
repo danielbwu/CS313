@@ -82,9 +82,6 @@
                         if (this.readyState == 4 && this.status == 200) {
                             console.log(this.responseText);
                         }
-                        else {
-                            console.log("Request Failed");
-                        }
                     };
                     request.open("POST", "add_to_cart.php", true);
                     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
