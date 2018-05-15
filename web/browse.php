@@ -79,7 +79,7 @@
                     //Send ajax request
                     var request = new XMLHttpRequest();
                     request.onreadystatechange = function() {
-                        if (this.resdyState == 4 && this.status == 200) {
+                        if (this.readyState == 4 && this.status == 200) {
                             console.log(this.responseText);
                         }
                         else {
