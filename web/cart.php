@@ -1,6 +1,33 @@
 <?php
     session_start();
 
+    //Get data from request
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        //Get product id
+        if (empty($_POST["itemID"])) {
+            echo "ID not found";
+            $success = false;
+        }
+        else {
+            $id = test_input($_POST["id"]);
+            $success = true;
+        }
+        
+    }
+
+    //Validates input
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+    if ($success) {
+        unset($_SESSION["cart"][$id]);
+    }
+
     $total = 0;
     foreach($_SESSION["cart"] as $p => $p_value) {
         $total += $p_value->price * $p_value->qty;
@@ -59,12 +86,13 @@
                     <?php
                     if (count($_SESSION["cart"]) > 0) {
                         foreach($_SESSION["cart"] as $p => $p_value) {
-                            echo "<tr id=\"" . $p . "\">" . 
-                                "<td>" . $p_value->name . "</td>\n" . 
-                                "<td>$" . $p_value->price . "</td>\n" . 
-                                "<td>" .  $p_value->qty . "</td>\n" . 
-                                "<td>" . "<button type=\"button\" class=\"btn btn-danger\" onclick=\"\">Remove</button><td>\n" . 
-                                "</tr>\n";
+                            echo "<form method=\"post\" action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . ">" .
+                                "<tr name=\"itemID\" value=\"" . $p . "\">" . 
+                                    "<td>" . $p_value->name . "</td>\n" . 
+                                    "<td>$" . $p_value->price . "</td>\n" . 
+                                    "<td>" .  $p_value->qty . "</td>\n" . 
+                                    "<td>" . "<input type=\"submit\" class=\"btn btn-danger\" value=\"Remove\" /><td>\n" . 
+                                "</tr></form>\n";
                         }
                         echo "<th>Total:</th>\n" . 
                             "<th class=\"col-md-1\">$" . $total . "</th>\n";
@@ -75,6 +103,11 @@
                     ?>
                 </tbody>
             </table>
+            <?php
+            if (count($_SESSION["cart"]) > 0) {
+                echo "<a href=\"checkout.php\"><button class=\"btn btn-success\">Proceed to Checkout</button></a>";
+            }
+            ?>
         </div>
     </div>
 </body>
