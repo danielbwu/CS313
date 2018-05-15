@@ -10,6 +10,7 @@
         }
         else {
             $id = test_input($_POST["id"]);
+            echo $id;
         }
 
         //Get quantity
@@ -18,6 +19,7 @@
         }
         else {
             $qty = test_input($_POST["qty"]);
+            echo $qty;
         }
         
     }
