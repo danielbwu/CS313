@@ -78,8 +78,9 @@
             <a href="browse.php"><button class="btn btn-primary">Done</button></a>
         </div>
     </div>
+<?php
+    session_unset();
+    session_destroy();
+?>
 </body>
 </html>
-<?php
-
-?>
