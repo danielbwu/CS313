@@ -71,7 +71,7 @@
     <script type="text/javascript">
         function addToCart(id) {
             console.log("Adding item " + id.toString() + " to cart");
-            let qty = parseInt(document.getElementById(id).value);
+            let qty = parseInt(document.getElementById(id.toString() + "-qty").value);
             console.log("Quantity: " + qty.toString());
         }
     </script>
@@ -99,7 +99,7 @@
                                 "<td>$" . $p_value->price . "</td>" . 
                                 "<td>" . "<input type=\"number\" id=\"" . $p . "-qty\" size=\"2\" min=\"0\" max=\"99\" value=\"" . $p_value->qty . "\">" . "</td>" . 
                                 "<td>" . "<button type=\"button\" class=\"btn btn-success\" onclick=\"addToCart(" . $p . ")\">Add to Cart</button>" . "<td>" . 
-                                "</tr>";
+                                "</tr>\n";
                             }
                         ?>
                     </tbody>
