@@ -50,23 +50,6 @@
 	<!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript">
-        function removeFromCart(id) {
-            console.log("Adding item " + id.toString() + " to cart");
-            if (id != null) {
-                //Send ajax request
-                var request = new XMLHttpRequest();
-                request.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        console.log(this.responseText);
-                    }
-                };
-                request.open("POST", "remove_from_cart.php", true);
-                request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                request.send("id=" + id);
-            }
-        }
-    </script>
 </head>
 <body>
     <?php
