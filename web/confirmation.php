@@ -62,13 +62,23 @@
 
 	<!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
 </head>
 <body>
-    
+    <?php
+		require("nav.php");
+	?>
     <!--Main Content-->
     <div class="container">
-        <div id="myForm"></div>
+        <div class="container-fluid jumbotron text-center">
+            <h2>Order Confired</h2>
+            <p><b>Order Total:</b> $<?php echo $_SESSION["total"]?></p>
+            <p><b>Ship To:</b> <?php echo $streetAddress . " " . $city . ", " . $state . " " . $zip ?></p>
+            <a href="browse.php"><button class="btn btn-primary">Return to Browse</button></a>
+        </div>
     </div>
 </body>
 </html>
+<?php
+
+?>

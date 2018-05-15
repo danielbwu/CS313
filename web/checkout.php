@@ -23,8 +23,9 @@
     <!--Main Content-->
     <div class="container">
         <div class="container-fluid col-md-6">
+            <a href="browse.php"><button class="btn btn-primary">Return to Browse</button></a>
             <h1>Checkout</h1>
-            <h2>Order Total: <?php echo $_SESSION["total"]?></h2>
+            <h2>Order Total: $<?php echo $_SESSION["total"]?></h2>
             <form method="post" action="confirmation.php">
                 <div class="form-group">
                     <label for="streetAddress">Street address</label>
