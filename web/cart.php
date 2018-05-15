@@ -6,7 +6,7 @@
 
         //Get product id
         if (empty($_POST["itemID"])) {
-            echo "ID not found";
+            //echo "ID not found";
             $success = false;
         }
         else {
@@ -86,13 +86,17 @@
                     <?php
                     if (count($_SESSION["cart"]) > 0) {
                         foreach($_SESSION["cart"] as $p => $p_value) {
-                            echo "<form method=\"post\" action=\"cart.php\">" .
-                                "<tr name=\"itemID\" value=\"" . $p . "\">" . 
+                            echo "<tr>\n" . 
                                     "<td>" . $p_value->name . "</td>\n" . 
                                     "<td>$" . $p_value->price . "</td>\n" . 
                                     "<td>" .  $p_value->qty . "</td>\n" . 
-                                    "<td>" . "<input type=\"submit\" class=\"btn btn-danger\" value=\"Remove\" /><td>\n" . 
-                                "</tr></form>\n";
+                                    "<td>" . 
+                                        "<form method=\"post\" action=\"cart.php\">\n" . 
+                                            "<input type=\"hidden\" name=\"itemID\" value=\"" . $p . "\">\n" . 
+                                            "<input type=\"submit\" class=\"btn btn-danger\" value=\"Remove\" />\n" . 
+                                        "</form>" . 
+                                    "<td>\n" . 
+                                "</tr>\n";
                         }
                         echo "<th>Total:</th>\n" . 
                             "<th class=\"col-md-1\">$" . $total . "</th>\n";
