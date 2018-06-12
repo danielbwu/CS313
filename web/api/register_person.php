@@ -49,9 +49,9 @@
                 $statement->bindValue(':inum', $inumber, PDO::PARAM_STR);
                 $statement->execute();
                 $person = $statement->fetch(PDO::FETCH_ASSOC);
-                echo "Person: " . json_encode($person);
+                //echo "Person: " . json_encode($person);
                 //Add person to db if they don't exist
-                echo "Row count: " . count($person);
+                //echo "Row count: " . count($person);
                 if (!$person) {
 
                     $statement = $db->prepare("INSERT INTO participant(name, inumber) VALUES (:name, :inum);");
@@ -64,7 +64,7 @@
                 else {
                     $p_id = $person['id'];
                 }
-                echo "Person ID: $p_id";
+                //echo "Person ID: $p_id";
 
                 //Check if person is already registered
                 $statement = $db->prepare("SELECT * FROM event_participant AS ep JOIN participant AS p ON ep.participant_id=p.id WHERE ep.event_id=:id AND p.inumber=:inum");
@@ -74,7 +74,7 @@
                 $person = $statement->fetchAll(PDO::FETCH_ASSOC);
 
                 if (count($person) != 0) {
-                    echo "User is already registered for this event";
+                    echo "Rows $person User is already registered for this event";
                     die();
                 }
                 else {
