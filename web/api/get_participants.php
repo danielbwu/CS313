@@ -27,8 +27,7 @@
                 $statement->execute();
                 $participants = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-                //echo json_encode($participants);
-                echo $event_id;
+                echo json_encode($participants);
             }
             else {
                 $statement = $db->prepare("SELECT * FROM event_participant AS ep JOIN participant AS p ON ep.participant_id=p.id");
