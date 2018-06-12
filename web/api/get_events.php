@@ -31,9 +31,9 @@
     }
 
     function getEvents() {
-        $statement = $db->prepare("SELECT * FROM event");
-        $statement->execute();
-        $events = $statement->fetchAll(PDO::FETCH_ASSOC);
+        //$statement = $db->prepare("SELECT * FROM event");
+        //$statement->execute();
+        //$events = $statement->fetchAll(PDO::FETCH_ASSOC);
 
         //echo json_encode($events);
         echo 'Hello World!';
