@@ -1,5 +1,4 @@
 <?php
-    //session_start();
     header("Access-Control-Allow-Origin: *");
     header("Content-Type: application/json; charset=UTF-8");
 
@@ -20,15 +19,12 @@
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
-            //echo 'Hello World!';
-            //getEvents();
 
             $statement = $db->prepare("SELECT * FROM event");
             $statement->execute();
             $events = $statement->fetchAll(PDO::FETCH_ASSOC);
 
             echo json_encode($events);
-            //echo 'Hello World!';
         }
     }
     catch (PDOException $ex)
@@ -36,13 +32,4 @@
         echo 'Error!: ' . $ex->getMessage();
         die();
     }
-
-    // function getEvents() {
-    //     //$statement = $db->prepare("SELECT * FROM event");
-    //     //$statement->execute();
-    //     //$events = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-    //     //echo json_encode($events);
-    //     echo 'Hello World!';
-    // }
 ?>

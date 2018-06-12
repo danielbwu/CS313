@@ -6,13 +6,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!--AngularJS-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
@@ -21,8 +22,66 @@
   </head>
   <body ng-app="StudentEvents" ng-controller="EventCtrl">
       <div class="container" ng-init="init()">
-        {{debug | json}}
+        <div class="container col-md-7 panel-group">
+
+          <div class="panel panel-primary border" ng-repeat="e in events">
+            <div class="panel-heading panel-primary">
+              <h2>{{e.name}}</h2>
+            </div>
+            <div class="panel-body">
+              <p>{{e.description}}</p>
+              <table class="table table-responsive">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="p in getPeopleByEvent(e.id)">
+                    <td>{{e.name}}</td>
+                    <td>{{e.notes}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+        </div>
       </div>
-    
+      <div class="container">
+          <h2>Panels with Contextual Classes</h2>
+          <div class="panel-group">
+            <div class="panel panel-default">
+              <div class="panel-heading">Panel with panel-default class</div>
+              <div class="panel-body">Panel Content</div>
+            </div>
+        
+            <div class="panel panel-primary">
+              <div class="panel-heading">Panel with panel-primary class</div>
+              <div class="panel-body">Panel Content</div>
+            </div>
+        
+            <div class="panel panel-success">
+              <div class="panel-heading">Panel with panel-success class</div>
+              <div class="panel-body">Panel Content</div>
+            </div>
+        
+            <div class="panel panel-info">
+              <div class="panel-heading">Panel with panel-info class</div>
+              <div class="panel-body">Panel Content</div>
+            </div>
+        
+            <div class="panel panel-warning">
+              <div class="panel-heading">Panel with panel-warning class</div>
+              <div class="panel-body">Panel Content</div>
+            </div>
+        
+            <div class="panel panel-danger">
+              <div class="panel-heading">Panel with panel-danger class</div>
+              <div class="panel-body">Panel Content</div>
+            </div>
+          </div>
+        </div>
   </body>
 </html>
