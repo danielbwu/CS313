@@ -71,7 +71,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form action="https://ancient-eyrie-30939.herokuapp.com/api/register_person.php" method="POST"></form>
+                <form action="https://ancient-eyrie-30939.herokuapp.com/api/register_person.php" method="POST">
                   <input type="hidden" name="event_id" value="{{reg_event_id}}"/>
                   <div class="form-group">
                     <label for="participant_name" class="col-form-label">Name:</label>
@@ -86,13 +86,13 @@
                       <textarea class="form-control" name="notes" ng-model="reg_notes"></textarea>
                   </div>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click="clearReg()">Close</button>
-                  <input type="submit" class="btn btn-primary" return="validate()" value="Register" ng-click="registerPerson()"></button>
+                  <input type="submit" class="btn btn-primary" value="Register"></button>
                 </form>
               </div>
-              <div class="modal-footer">
+              <!-- <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click="clearReg()">Close</button>
                 <input type="submit" class="btn btn-primary" return="validate()" value="Register" ng-click="registerPerson()"></button>
-              </div>
+              </div> -->
             </div>
           </div>
       </div>
