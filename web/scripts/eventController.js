@@ -3,6 +3,7 @@ app.controller("EventCtrl", function($scope, $http, EventService) {
     $scope.events = [];
     $scope.people = [];
     $scope.tags = [];
+    $scope.reg_event_id = "";
     $scope.init = function () {
         EventService.getEvents()
             .then(function (response) {
@@ -34,5 +35,39 @@ app.controller("EventCtrl", function($scope, $http, EventService) {
             .catch(function (error) {
                 console.error("Error retrieving tags");
             });
+    }
+
+    $scope.setRegId = function (id) {
+        $scope.reg_event_id = id;
+    }
+
+    $scope.validate = function () {
+        return ($scope.reg_event_id != 0) && ($scope.reg_name != "") && ($scope.reg_inumber.length == 9);
+    }
+
+    $scope.clearReg = function () {
+        $scope.reg_event_id = "";
+        $scope.reg_name = "";
+        $scope.reg_inumber = "";
+        $scope.reg_notes = "";
+    }
+
+    $scope.registerPerson = function () {
+
+        if ($scope.validate()) {
+            let event_id = $scope.reg_event_id;
+            let participant_name = $scope.reg_name;
+            let participant_inumber = $scope.reg_inumber;
+            let notes = $scope.reg_notes;
+
+            $http.post("https://ancient-eyrie-30939.herokuapp.com/api/register_person.php", event_id, participant_name, participant_inumber, notes)
+                .then(function (response) {
+                    console.log(response.data);
+                })
+                .catch(function (error) {
+
+                });
+        }
+
     }
 });

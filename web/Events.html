@@ -21,7 +21,7 @@
     <script src="scripts/eventService.js"></script>
   </head>
   <body ng-app="StudentEvents" ng-controller="EventCtrl">
-      <div class="container" ng-init="init()">
+      <div class="container align-items-center" ng-init="init()">
         <div class="container col-md-7 panel-group">
 
           <div class="panel panel-primary border" ng-repeat="e in events">
@@ -49,14 +49,50 @@
                   </tr>
                 </tbody>
               </table>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registerModal" ng-click="setRegId(e.id)">
+                  Register
+              </button>
             </div>
             <div class="panel-footer" ng-init="getTags(e.id)">
               Tags: 
-              <span></span>
+              <span class="tag" ng-repeat="t in tags[e.id]">{{t.name}} </span>
             </div>
           </div>
         </div>
       </div>
-      
+      <!-- Modal -->
+      <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Sign Up for Event {{reg_event_id}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="clearReg()">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="hello.html" method="POST">
+                  <input type="hidden" name="event_id" value="{{reg_event_id}}"/>
+                  <div class="form-group">
+                    <label for="participant_name" class="col-form-label">Name:</label>
+                    <input type="text" class="form-control" name="participant_name" placeholder="Enter name" ng-model="reg_name"/>
+                  </div>
+                  <div class="form-group">
+                      <label for="participant_inumber" class="col-form-label">Inumber:</label>
+                      <input type="text" class="form-control" name="participant_inumber" placeholder="Enter inumber" ng-model="reg_inumber"/>
+                  </div>
+                  <div class="form-group">
+                      <label for="notes" class="col-form-label">Notes (optional):</label>
+                      <textarea class="form-control" name="notes" ng-model="reg_notes"></textarea>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click="clearReg()">Close</button>
+                <input type="submit" class="btn btn-primary" return="validate()" value="Register" ng-click="registerPerson()"></button>
+              </div>
+            </div>
+          </div>
+      </div>
   </body>
 </html>
