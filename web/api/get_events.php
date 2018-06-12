@@ -30,6 +30,7 @@
         $statement->execute();
         $events = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        echo json_encode($events);
+        //echo json_encode($events);
+        echo 'Hello World!';
     }
 ?>
