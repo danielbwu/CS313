@@ -21,7 +21,14 @@
 
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
             //echo 'Hello World!';
-            getEvents();
+            //getEvents();
+
+            $statement = $db->prepare("SELECT * FROM event");
+            //$statement->execute();
+            //$events = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            //echo json_encode($events);
+            echo 'Hello World!';
         }
     }
     catch (PDOException $ex)
@@ -30,12 +37,12 @@
         die();
     }
 
-    function getEvents() {
-        $statement = $db->prepare("SELECT * FROM event");
-        //$statement->execute();
-        //$events = $statement->fetchAll(PDO::FETCH_ASSOC);
+    // function getEvents() {
+    //     //$statement = $db->prepare("SELECT * FROM event");
+    //     //$statement->execute();
+    //     //$events = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        //echo json_encode($events);
-        echo 'Hello World!';
-    }
+    //     //echo json_encode($events);
+    //     echo 'Hello World!';
+    // }
 ?>
