@@ -17,8 +17,12 @@
 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         //echo 'Success!';
-        echo 'Hello World!';
+        
         //getEvents();
+
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            echo 'Hello World!';
+        }
     }
     catch (PDOException $ex)
     {
