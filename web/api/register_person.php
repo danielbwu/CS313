@@ -73,6 +73,7 @@ echo "Hello World";
 
                 if (count($person) != 0) {
                     echo "User is already registered for this event";
+                    header("Location: https://ancient-eyrie-30939.herokuapp.com/Events.html");
                     die();
                 }
                 else {
@@ -86,6 +87,7 @@ echo "Hello World";
                 }
             } else { 
                 echo "Invalid Request";
+                header("Location: https://ancient-eyrie-30939.herokuapp.com/Events.html");
                 die(); 
             }
         }
@@ -95,6 +97,7 @@ echo "Hello World";
     catch (PDOException $ex)
     {
         echo 'Error!: ' . $ex->getMessage();
+        header("Location: https://ancient-eyrie-30939.herokuapp.com/Events.html");
         die();
     }
 
