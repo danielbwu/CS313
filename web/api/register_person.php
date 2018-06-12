@@ -52,7 +52,7 @@
                 echo "Person: " . json_encode($person);
                 //Add person to db if they don't exist
                 echo "Row count: " . count($person);
-                if (count($person) == 0) {
+                if (!$person) {
 
                     $statement = $db->prepare("INSERT INTO participant(name, inumber) VALUES (:name, :inum);");
                     $statement->bindValue(':inum', $inumber, PDO::PARAM_STR);
