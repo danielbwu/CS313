@@ -27,7 +27,8 @@
                 $statement->execute();
                 $participants = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-                echo json_encode($participants);
+                //echo json_encode($participants);
+                echo $event_id;
             }
             else {
                 $statement = $db->prepare("SELECT * FROM event_participant AS ep JOIN participant AS p ON ep.participant_id=p.id");
@@ -38,6 +39,17 @@
             }
             
         }
+        // else if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        //     if (!empty($_POST["event_id"])) {
+        //         $event_id = test_input($_POST["event_id"]);
+        //         $statement = $db->prepare("SELECT * FROM event_participant AS ep JOIN participant AS p ON ep.participant_id=p.id WHERE ep.event_id=:id");
+        //         $statement->bindValue(':id', $id, PDO::PARAM_INT);
+        //         $statement->execute();
+        //         $participants = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        //         echo json_encode($participants);
+        //     }
+        // }
     }
     catch (PDOException $ex)
     {
