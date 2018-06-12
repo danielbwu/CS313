@@ -22,7 +22,7 @@
 
             if (!empty($_GET["event_id"])) {
                 $event_id = test_input($_GET["event_id"]);
-                $statement = $db->prepare("SELECT * FROM event_participant AS ep JOIN participant AS p ON ep.participant_id=p.id WHERE ep.event_id=:id");
+                $statement = $db->prepare("SELECT ep.id, name, notes FROM event_participant AS ep JOIN participant AS p ON ep.participant_id=p.id WHERE ep.event_id=:id");
                 $statement->bindValue(':id', $id, PDO::PARAM_INT);
                 $statement->execute();
                 $participants = $statement->fetchAll(PDO::FETCH_ASSOC);
