@@ -84,7 +84,10 @@
 
 
                 }
-            } else { die(); }
+            } else { 
+                echo "Invalid Request";
+                die(); 
+            }
         }
 
        
