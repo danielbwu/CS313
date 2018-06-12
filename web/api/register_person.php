@@ -1,7 +1,7 @@
 <?php
     header("Access-Control-Allow-Origin: *");
     header("Content-Type: application/json; charset=UTF-8");
-    header("Location: https://ancient-eyrie-30939.herokuapp.com/Events.html");
+    //header("Location: https://ancient-eyrie-30939.herokuapp.com/Events.html");
 echo "Hello World";
     try
     {
@@ -107,6 +107,6 @@ echo "Hello World";
         return $data;
     }
 
-    //header("Location: https://ancient-eyrie-30939.herokuapp.com/Events.html");
+    header("Location: https://ancient-eyrie-30939.herokuapp.com/Events.html");
     die();
 ?>
