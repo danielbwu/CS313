@@ -46,13 +46,15 @@ echo "Hello World";
             if ($valid) {
                 $p_id = NULL;
                 //Validate person
-                $statement = $db->prepare("SELECT id FROM participant WHERE inumber=:inum");
+                $statement = $db->prepare("SELECT * FROM participant WHERE inumber=:inum");
                 $statement->bindValue(':inum', $inumber, PDO::PARAM_STR);
                 $statement->execute();
                 $person = $statement->fetch(PDO::FETCH_ASSOC);
                 echo json_encode($person);
                 //Add person to db if they don't exist
+                echo count($person);
                 if (count($person) == 0) {
+
                     $statement = $db->prepare("INSERT INTO participant(name, inumber) VALUES (:name, :inum);");
                     $statement->bindValue(':inum', $inumber, PDO::PARAM_STR);
                     $statement->bindValue(':name', $name, PDO::PARAM_STR);
