@@ -42,7 +42,9 @@ app.controller("EventCtrl", function($scope, $http, EventService) {
     }
 
     $scope.validate = function () {
-        return ($scope.reg_event_id != 0) && ($scope.reg_name != "") && ($scope.reg_inumber.length == 9);
+        let valid = ($scope.reg_event_id != 0) && ($scope.reg_name != "") && ($scope.reg_inumber.length == 9);
+        console.log("Valid form: " + valid.toString());
+        return valid;
     }
 
     $scope.clearReg = function () {

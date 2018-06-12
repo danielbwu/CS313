@@ -49,6 +49,7 @@
                 $statement->bindValue(':inum', $inumber, PDO::PARAM_STR);
                 $statement->execute();
                 $person = $statement->fetch(PDO::FETCH_ASSOC);
+                echo json_encode($person);
                 //Add person to db if they don't exist
                 if (count($person) == 0) {
                     $statement = $db->prepare("INSERT INTO participant(name, inumber) VALUES (:name, :inum);");
@@ -61,6 +62,7 @@
                 else {
                     $p_id = $person['id'];
                 }
+                echo "Person ID: $p_id";
 
                 //Check if person is already registered
                 $statement = $db->prepare("SELECT * FROM event_participant AS ep JOIN participant AS p ON ep.participant_id=p.id WHERE ep.event_id=:id AND p.inumber=:inum");
@@ -79,6 +81,8 @@
                     $statement->bindValue(':p_id', $p_id, PDO::PARAM_INT);
                     $statement->bindValue(':notes', $notes, PDO::PARAM_STR);
                     $statement->execute();
+
+
                 }
             } else { die(); }
         }
