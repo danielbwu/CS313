@@ -52,7 +52,7 @@ echo "Hello World";
                 $person = $statement->fetch(PDO::FETCH_ASSOC);
                 echo json_encode($person);
                 //Add person to db if they don't exist
-                echo count($person);
+                echo "Row count: " . count($person);
                 if (count($person) == 0) {
 
                     $statement = $db->prepare("INSERT INTO participant(name, inumber) VALUES (:name, :inum);");
