@@ -74,7 +74,7 @@
                 $person = $statement->fetchAll(PDO::FETCH_ASSOC);
 
                 if (count($person) != 0) {
-                    echo "Rows $person User is already registered for this event";
+                    echo "User is already registered for this event";
                     die();
                 }
                 else {
