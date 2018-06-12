@@ -105,4 +105,7 @@ echo "Hello World";
         $data = htmlspecialchars($data);
         return $data;
     }
+
+    header("Location: https://ancient-eyrie-30939.herokuapp.com/Events.html");
+    die();
 ?>
