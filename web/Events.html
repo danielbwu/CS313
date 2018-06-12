@@ -70,8 +70,9 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
+              <form action="hello.html" method="POST"></form>
               <div class="modal-body">
-                <form action="hello.html" method="POST">
+                
                   <input type="hidden" name="event_id" value="{{reg_event_id}}"/>
                   <div class="form-group">
                     <label for="participant_name" class="col-form-label">Name:</label>
@@ -85,12 +86,13 @@
                       <label for="notes" class="col-form-label">Notes (optional):</label>
                       <textarea class="form-control" name="notes" ng-model="reg_notes"></textarea>
                   </div>
-                </form>
+                
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click="clearReg()">Close</button>
-                <input type="submit" class="btn btn-primary" return="validate()" value="Register" ng-click="registerPerson()"></button>
+                <input type="submit" class="btn btn-primary" value="Register" ></button>
               </div>
+            </form>
             </div>
           </div>
       </div>

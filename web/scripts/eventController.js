@@ -66,7 +66,7 @@ app.controller("EventCtrl", function($scope, $http, EventService) {
 
             $http.post("https://ancient-eyrie-30939.herokuapp.com/api/register_person.php", event_id, participant_name, participant_inumber, notes)
                 .then(function (response) {
-                    console.log(response.data);
+                    console.log(response);
                 })
                 .catch(function (error) {
 
