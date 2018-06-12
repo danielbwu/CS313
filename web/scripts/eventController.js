@@ -9,7 +9,8 @@ app.controller("EventCtrl", function($scope, $http, EventService) {
     };
 
     $scope.getPeopleByEvent = function (event_id) {
-        EventService.getParticpantByEvent(event_id)
+        console.log(event_id);
+        EventService.getParticpants()
             .then(function (response) {
                 //return response.data;
                 console.log(response.data);
