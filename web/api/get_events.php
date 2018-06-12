@@ -24,11 +24,11 @@
             //getEvents();
 
             $statement = $db->prepare("SELECT * FROM event");
-            //$statement->execute();
-            //$events = $statement->fetchAll(PDO::FETCH_ASSOC);
+            $statement->execute();
+            $events = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-            //echo json_encode($events);
-            echo 'Hello World!';
+            echo json_encode($events);
+            //echo 'Hello World!';
         }
     }
     catch (PDOException $ex)
