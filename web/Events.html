@@ -19,8 +19,10 @@
     <script src="scripts/eventController.js"></script>
     <script src="scripts/eventService.js"></script>
   </head>
-  <body>
-      
+  <body ng-app="StudentEvents" ng-controller="EventCtrl">
+      <div class="container" ng-init="init()">
+        {{debug}}
+      </div>
     
   </body>
 </html>
