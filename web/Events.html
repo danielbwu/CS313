@@ -30,58 +30,33 @@
             </div>
             <div class="panel-body">
               <p>{{e.description}}</p>
-              <table class="table table-responsive">
+              <p><b>Where: </b>{{e.location}}</p>
+              <p><b>When: </b>{{e.date | date:"MMMM d, y"}} 
+                <span>{{e.start_time | date:"shortTime"}}</span>&nbsp;-&nbsp;
+                <span>{{e.end_time | date:"shortTime"}}</span>
+              </p>
+              <table class="table table-responsive" ng-init="getPeopleByEvent(e.id)">
                 <thead>
                   <tr>
-                    <th>Name</th>
-                    <th>Notes</th>
+                    <th class="col-md-3">Name</th>
+                    <th>Notes {{e.people}}</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr ng-init="getPeopleByEvent(e.id)">
-                    <td></td>
-                    <td></td>
+                  <tr ng-repeat="p in people[e.id]">
+                    <td>{{p.name}}</td>
+                    <td>{{p.notes}}</td>
                   </tr>
                 </tbody>
               </table>
             </div>
+            <div class="panel-footer" ng-init="getTags(e.id)">
+              Tags: 
+              <span></span>
+            </div>
           </div>
-          
         </div>
       </div>
-      <div class="container">
-          <h2>Panels with Contextual Classes</h2>
-          <div class="panel-group">
-            <div class="panel panel-default">
-              <div class="panel-heading">Panel with panel-default class</div>
-              <div class="panel-body">Panel Content</div>
-            </div>
-        
-            <div class="panel panel-primary">
-              <div class="panel-heading">Panel with panel-primary class</div>
-              <div class="panel-body">Panel Content</div>
-            </div>
-        
-            <div class="panel panel-success">
-              <div class="panel-heading">Panel with panel-success class</div>
-              <div class="panel-body">Panel Content</div>
-            </div>
-        
-            <div class="panel panel-info">
-              <div class="panel-heading">Panel with panel-info class</div>
-              <div class="panel-body">Panel Content</div>
-            </div>
-        
-            <div class="panel panel-warning">
-              <div class="panel-heading">Panel with panel-warning class</div>
-              <div class="panel-body">Panel Content</div>
-            </div>
-        
-            <div class="panel panel-danger">
-              <div class="panel-heading">Panel with panel-danger class</div>
-              <div class="panel-body">Panel Content</div>
-            </div>
-          </div>
-        </div>
+      
   </body>
 </html>
