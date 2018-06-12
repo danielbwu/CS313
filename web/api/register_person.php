@@ -2,7 +2,6 @@
     header("Access-Control-Allow-Origin: *");
     header("Content-Type: application/json; charset=UTF-8");
     //header("Location: https://ancient-eyrie-30939.herokuapp.com/Events.html");
-echo "Hello World";
     try
     {
         $dbUrl = getenv('DATABASE_URL');
@@ -50,7 +49,7 @@ echo "Hello World";
                 $statement->bindValue(':inum', $inumber, PDO::PARAM_STR);
                 $statement->execute();
                 $person = $statement->fetch(PDO::FETCH_ASSOC);
-                echo json_encode($person);
+                echo "Person: " . json_encode($person);
                 //Add person to db if they don't exist
                 echo "Row count: " . count($person);
                 if (count($person) == 0) {
