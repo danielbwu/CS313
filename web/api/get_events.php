@@ -17,7 +17,8 @@
 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         //echo 'Success!';
-        getEvents();
+        echo 'Hello World!';
+        //getEvents();
     }
     catch (PDOException $ex)
     {
