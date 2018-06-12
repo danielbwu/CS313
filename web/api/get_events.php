@@ -31,7 +31,7 @@
     }
 
     function getEvents() {
-        //$statement = $db->prepare("SELECT * FROM event");
+        $statement = $db->prepare("SELECT * FROM event");
         //$statement->execute();
         //$events = $statement->fetchAll(PDO::FETCH_ASSOC);
 
